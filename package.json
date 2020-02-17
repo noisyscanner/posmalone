@@ -1,0 +1,23 @@
+{
+  "name": "posmalone",
+  "version": "1.0.0",
+  "description": "Print to thermal POS printers from the browser!",
+  "main": "index.js",
+  "repository": "github.com/noisyscanner/posmalone",
+  "author": "Brad Reed <brad@bradreed.co.uk>",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel index.html --https"
+  },
+  "devDependencies": {
+    "@babel/core": "7.8.4",
+    "browserslist": "4.8.7",
+    "standard": "14.3.1"
+  },
+  "dependencies": {
+    "parcel": "1.12.4"
+  },
+  "browserslist": [
+    "last 1 Chrome version"
+  ]
+}
