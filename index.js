@@ -3,10 +3,10 @@ let device;
 const EPSON_VENDOR_ID = 1208;
 const output = 'Hello Elephants! Receipt printing working directly from the browser! No drivers required! :D'.replace(/ /g, '\n');
 
-function setup(device) {
-  return device.open()
-    .then(() => device.selectConfiguration(1))
-    .then(() => device.claimInterface(0))
+async function setup(device) {
+  await device.open();
+  await device.selectConfiguration(1);
+  await device.claimInterface(0);
 }
 
 async function print(text) {
@@ -21,22 +21,25 @@ async function print(text) {
   }
 }
 
-function connectAndPrint() {
-  if (device == null) {
-    navigator.usb.requestDevice({
-      filters: [{ vendorId: EPSON_VENDOR_ID }]
-    })
-      .then(selectedDevice => {
-        device = selectedDevice;
-        return setup(device);
-      })
-      .then(() => print(output))
-      .catch(console.error)
-  } else {
-    print(output);
+async function connectAndPrint() {
+  if (!device) {
+    try {
+      const selectedDevice = await navigator.usb.requestDevice({
+        filters: [{
+          vendorId: EPSON_VENDOR_ID
+        }]
+      });
+      device = selectedDevice;
+      await setup(device);
+    } catch (err) {
+      console.error(err);
+    }
   }
+
+  await print(output);
 }
 
+// Re-setup previously allowed devices
 navigator.usb.getDevices()
   .then(devices => {
     if (devices.length > 0) {
