@@ -10,12 +10,17 @@ export default class Printer {
     await device.open();
     await device.selectConfiguration(1);
     await device.claimInterface(0);
+    console.log(device);
     return new Printer(device);
   }
 
-  async print(text) {
+  print(text) {
     const encoder = new TextEncoder();
     const data = encoder.encode(text + bottomPadding + cutCommand);
-    await this.device.transferOut(1, data);
+    return this.write(data);
+  }
+
+  write(buffer) {
+    return this.device.transferOut(1, buffer);
   }
 }

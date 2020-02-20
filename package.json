@@ -15,6 +15,7 @@
     "standard": "14.3.1"
   },
   "dependencies": {
+    "escpos-buffer": "git+ssh://git@github.com/noisyscanner/escpos-buffer",
     "parcel": "1.12.4"
   },
   "browserslist": [
