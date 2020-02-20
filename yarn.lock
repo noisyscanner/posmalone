@@ -2206,9 +2206,9 @@ escodegen@~1.9.0:
   optionalDependencies:
     source-map "~0.6.1"
 
-"escpos-buffer@git+ssh://git@github.com/noisyscanner/escpos-buffer":
+"escpos-buffer@git+ssh://git@github.com/noisyscanner/escpos-buffer.git":
   version "1.0.0"
-  resolved "git+ssh://git@github.com/noisyscanner/escpos-buffer#fba803c30189b6cb48fc31d967cc01d6a53ef517"
+  resolved "git+ssh://git@github.com/noisyscanner/escpos-buffer.git#59795b679074e675b4c552cbeeb311dd573e93a6"
   dependencies:
     iconv-lite "^0.5.0"
     pngjs "^3.4.0"
