@@ -7,12 +7,17 @@
   "author": "Brad Reed <brad@bradreed.co.uk>",
   "license": "MIT",
   "scripts": {
-    "start": "parcel index.html --https"
+    "start": "parcel index.html --https",
+    "lint": "prettier --write **/*.js && eslint --ignore-path .gitignore --fix ."
   },
   "devDependencies": {
     "@babel/core": "7.8.4",
     "browserslist": "4.8.7",
-    "standard": "14.3.1"
+    "eslint": "6.8.0",
+    "eslint-config-airbnb": "18.0.1",
+    "eslint-plugin-import": "2.20.1",
+    "eslint-plugin-jsx-a11y": "6.2.3",
+    "prettier": "1.19.1"
   },
   "dependencies": {
     "escpos-buffer": "git+ssh://git@github.com/noisyscanner/escpos-buffer",

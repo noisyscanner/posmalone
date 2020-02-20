@@ -1,33 +1,34 @@
-import {Printer, Style, Align, Model, WebUSB} from 'escpos-buffer'
+import { Printer, Model, WebUSB } from 'escpos-buffer';
 
 let printer;
 
 const EPSON_VENDOR_ID = 1208;
 const output = 'Hello Elephants! Receipt printing working directly from the browser! No drivers required! :D'.replace(/ /g, '\n');
 
+async function setup(device) {
+  const model = new Model('TM-T20');
+  const connection = new WebUSB(device);
+  await connection.open();
+  return new Printer(model, connection);
+}
+
 async function getDevice() {
   try {
     // Re-setup previously allowed devices
-    let [device] = await navigator.usb.getDevices()
+    let [device] = await navigator.usb.getDevices();
     if (!device) {
       // Request permission first time
       device = await navigator.usb.requestDevice({
         filters: [{
-          vendorId: EPSON_VENDOR_ID
-        }]
+          vendorId: EPSON_VENDOR_ID,
+        }],
       });
     }
     return setup(device);
-  } catch {
+  } catch (err) {
     console.error(err);
+    return null;
   }
-}
-
-async function setup(device) {
-  const model = new Model('TM-T20')
-  const connection = new WebUSB(device)
-  await connection.open();
-  return new Printer(model, connection)
 }
 
 async function connectAndPrint() {
@@ -40,9 +41,8 @@ async function connectAndPrint() {
   }
 
   printer.writeln(output);
-  printer.feed(6)
-  printer.cutter()
-  printer.write(connection.buffer())
+  printer.feed(6);
+  printer.cutter();
 }
 
-document.querySelector('button').addEventListener('click', connectAndPrint)
+document.querySelector('button').addEventListener('click', connectAndPrint);

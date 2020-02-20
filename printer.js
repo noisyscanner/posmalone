@@ -1,4 +1,4 @@
-const cutCommand = "\x1B@\x1DV1";
+const cutCommand = '\x1B@\x1DV1';
 const bottomPadding = '\n\n\n\n\n';
 
 export default class Printer {
