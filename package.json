@@ -8,6 +8,7 @@
   "license": "MIT",
   "scripts": {
     "start": "parcel index.html --https",
+    "build": "parcel build index.html",
     "lint": "prettier --write **/*.js && eslint --ignore-path .gitignore --fix ."
   },
   "devDependencies": {
