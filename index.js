@@ -1,4 +1,6 @@
-import { Printer, Model, WebUSB } from 'escpos-buffer';
+import {
+  Printer, Style, Align, WebUSB, Model,
+} from 'escpos-buffer';
 
 let printer;
 
@@ -40,6 +42,11 @@ async function connectAndPrint() {
     console.error(err);
   }
 
+  printer.writeln('MALINDI SUB-COUNTY HOSPITAL', Style.DoubleHeight | Style.Bold, Align.Center);
+  printer.writeln('P.O. BOX 4- 80200', null, Align.Center);
+  printer.writeln('MALINDI', null, Align.Center);
+  printer.writeln('Tel No: 0702744917, 0725784998', null, Align.Center);
+  printer.writeln('0787080746, 0771086431', null, Align.Center);
   printer.writeln(output);
   printer.feed(6);
   printer.cutter();
