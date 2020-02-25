@@ -1,9 +1,12 @@
-import { Printer, Model, WebUSB } from 'escpos-buffer';
+import {
+  Align, Model, Printer, Style, WebUSB,
+} from 'escpos-buffer';
 
 let printer;
 
 const EPSON_VENDOR_ID = 1208;
-const output = 'Hello Elephants! Receipt printing working directly from the browser! No drivers required! :D'.replace(/ /g, '\n');
+
+const getOutput = () => document.getElementById('output').value;
 
 async function setup(device) {
   const model = new Model('TM-T20');
@@ -40,7 +43,12 @@ async function connectAndPrint() {
     console.error(err);
   }
 
-  printer.writeln(output);
+  printer.writeln('JACKSON COUNTY HOSPITAL', Style.DoubleHeight | Style.Bold, Align.Center);
+  printer.writeln('P.O. BOX 4- 01001', null, Align.Center);
+  printer.writeln('AMERICA', null, Align.Center);
+  printer.writeln('Tel No: 15552022, 29933392', null, Align.Center);
+  printer.writeln('hospital@jackson.tx', null, Align.Center);
+  printer.writeln(getOutput());
   printer.feed(6);
   printer.cutter();
 }
