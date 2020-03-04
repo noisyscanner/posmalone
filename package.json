@@ -21,7 +21,7 @@
     "prettier": "1.19.1"
   },
   "dependencies": {
-    "escpos-buffer": "git+ssh://git@github.com/noisyscanner/escpos-buffer.git",
+    "escpos-buffer": "1.1.0",
     "parcel": "1.12.4"
   },
   "browserslist": [
