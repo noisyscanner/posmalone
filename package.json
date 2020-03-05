@@ -22,9 +22,15 @@
   },
   "dependencies": {
     "escpos-buffer": "1.1.0",
-    "parcel": "1.12.4"
+    "moment": "2.24.0",
+    "parcel": "1.12.4",
+    "pngjs": "3.4.0",
+    "table": "5.4.6"
   },
   "browserslist": [
     "last 1 Chrome version"
-  ]
+  ],
+  "alias": {
+    "pngjs": "./node_modules/escpos-buffer/node_modules/pngjs"
+  }
 }

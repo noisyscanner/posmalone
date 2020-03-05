@@ -1,12 +1,8 @@
-import {
-  Align, Model, Printer, Style, WebUSB,
-} from 'escpos-buffer';
+import { Model, Printer, WebUSB } from 'escpos-buffer';
+import printReceipt from './printReceipt';
+import receipt from './receipt';
 
 let printer;
-
-const EPSON_VENDOR_ID = 1208;
-
-const getOutput = () => document.getElementById('output').value;
 
 async function setup(device) {
   const model = new Model('TM-T20');
@@ -22,9 +18,11 @@ async function getDevice() {
     if (!device) {
       // Request permission first time
       device = await navigator.usb.requestDevice({
-        filters: [{
-          vendorId: EPSON_VENDOR_ID,
-        }],
+        filters: [
+          {
+            classCode: 7,
+          },
+        ],
       });
     }
     return setup(device);
@@ -43,14 +41,7 @@ async function connectAndPrint() {
     console.error(err);
   }
 
-  printer.writeln('JACKSON COUNTY HOSPITAL', Style.DoubleHeight | Style.Bold, Align.Center);
-  printer.writeln('P.O. BOX 4- 01001', null, Align.Center);
-  printer.writeln('AMERICA', null, Align.Center);
-  printer.writeln('Tel No: 15552022, 29933392', null, Align.Center);
-  printer.writeln('hospital@jackson.tx', null, Align.Center);
-  printer.writeln(getOutput());
-  printer.feed(6);
-  printer.cutter();
+  printReceipt(printer, receipt);
 }
 
 document.querySelector('button').addEventListener('click', connectAndPrint);
