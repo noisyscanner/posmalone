@@ -34,7 +34,24 @@ function printClinicDetails(printer, receipt) {
   const { type } = invoice;
   const [address] = clinic.addresses;
 
-  printer.writeln(clinic.name, Style.DoubleHeight | Style.Bold, Align.Center);
+  printer.withStyle(
+    {
+      width: 4,
+      height: 8,
+      bold: true,
+      // italic: true,
+      underline: true,
+      align: Align.Center,
+    },
+    () => {
+      printer.writeln('MASSIVE');
+    },
+  );
+  printer.writeln(
+    clinic.name,
+    Style.DoubleHeight | Style.Bold | Style.Italic,
+    Align.Center,
+  );
   printer.writeln([address.street, address.city].join('\n'), null, Align.Center);
   printer.writeln(
     `${type} payment receipt`,
