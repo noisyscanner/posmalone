@@ -9,6 +9,7 @@
   "scripts": {
     "start": "parcel index.html --https",
     "build": "parcel build index.html",
+    "build:prod": "parcel build index.html --publicPath /posmalone",
     "lint": "prettier --write **/*.js && eslint --ignore-path .gitignore --fix ."
   },
   "devDependencies": {
@@ -21,7 +22,7 @@
     "prettier": "1.19.1"
   },
   "dependencies": {
-    "escpos-buffer": "1.1.0",
+    "escpos-buffer": "1.3.0",
     "moment": "2.24.0",
     "parcel": "1.12.4",
     "pngjs": "3.4.0",

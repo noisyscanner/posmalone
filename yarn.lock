@@ -2206,10 +2206,10 @@ escodegen@~1.9.0:
   optionalDependencies:
     source-map "~0.6.1"
 
-escpos-buffer@1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/escpos-buffer/-/escpos-buffer-1.1.0.tgz#36b28cab57c3b63f49e85c397a38c066401dbd3a"
-  integrity sha512-h4RxgMtdzojV5yuc64SR4OkIaromQWTxpstBGvfqxQDInRz+erkCMKtZxPKBfi+5j5K8W6n5zWiL2O0zAZNQTw==
+escpos-buffer@1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/escpos-buffer/-/escpos-buffer-1.3.0.tgz#e9ac0eba0dd7f2269d8114d41552a5ababe9925d"
+  integrity sha512-J/88bcL2bauRnwaWMonsVmfAakf9mupVs1HhLoZUaZBq10MP0ybhwY8iu4ftHZ1JBEhEqZLDUDvRBSjqfL++Xw==
   dependencies:
     iconv-lite "^0.5.0"
     pngjs "^3.4.0"
