@@ -157,10 +157,11 @@ async function printFooter(printer, receipt) {
 }
 
 export default async function printReceipt(printer, receipt) {
-  printHeader(printer, receipt);
-  printItems(printer, receipt);
-  printTotal(printer, receipt);
-  await printFooter(printer, receipt);
+  printer.writeln('Hello world');
+  // printHeader(printer, receipt);
+  // printItems(printer, receipt);
+  // printTotal(printer, receipt);
+  // await printFooter(printer, receipt);
   printer.feed(6);
   printer.cutter();
 }
