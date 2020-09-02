@@ -2206,13 +2206,13 @@ escodegen@~1.9.0:
   optionalDependencies:
     source-map "~0.6.1"
 
-escpos-buffer@1.3.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/escpos-buffer/-/escpos-buffer-1.3.0.tgz#e9ac0eba0dd7f2269d8114d41552a5ababe9925d"
-  integrity sha512-J/88bcL2bauRnwaWMonsVmfAakf9mupVs1HhLoZUaZBq10MP0ybhwY8iu4ftHZ1JBEhEqZLDUDvRBSjqfL++Xw==
+escpos-buffer@1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/escpos-buffer/-/escpos-buffer-1.5.0.tgz#1ac8ff787e0e8a4e7d8acf08454054239c799824"
+  integrity sha512-w07zUpG5R0sJev9RjSuyS0/TvRMyW8APLZUS5Vrl/PWK/HvjdciTBBI+e3hJaN/3iYMmt5QFCRM5kA8ip35Xxg==
   dependencies:
     iconv-lite "^0.5.0"
-    pngjs "^3.4.0"
+    pngjs "^5.0.0"
     qrcode "^1.4.4"
     tslib "~1.10.0"
 
@@ -4181,10 +4181,15 @@ pn@^1.1.0:
   resolved "https://registry.yarnpkg.com/pn/-/pn-1.1.0.tgz#e2f4cef0e219f463c179ab37463e4e1ecdccbafb"
   integrity sha512-2qHaIQr2VLRFoxe2nASzsV6ef4yOOH+Fi9FBOVH6cqeSgUnoyySPZkxzLuzd+RYOQTRpROA0ztTMqxROKSb/nA==
 
-pngjs@3.4.0, pngjs@^3.3.0, pngjs@^3.4.0:
+pngjs@3.4.0, pngjs@^3.3.0:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/pngjs/-/pngjs-3.4.0.tgz#99ca7d725965fb655814eaf65f38f12bbdbf555f"
   integrity sha512-NCrCHhWmnQklfH4MtJMRjZ2a8c80qXeMlQMv2uVp9ISJMTt562SbGd6n2oq0PaPgKm7Z6pL9E2UlLIhC+SHL3w==
+
+pngjs@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/pngjs/-/pngjs-5.0.0.tgz#e79dd2b215767fd9c04561c01236df960bce7fbb"
+  integrity sha512-40QW5YalBNfQo5yRYmiw7Yz6TKKVr3h6970B2YE+3fQpsWcrbj1PzJgxeJ19DRQjhMbKPIuMY8rFaXc8moolVw==
 
 posix-character-classes@^0.1.0:
   version "0.1.1"
